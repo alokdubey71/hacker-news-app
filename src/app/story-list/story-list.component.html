@@ -1,0 +1,5 @@
+<div *ngFor="let story of stories">
+    <app-story-item [story]="story"></app-story-item>
+  </div>
+  <app-pagination [currentPage]="currentPage" (pageChanged)="loadStories($event)"></app-pagination>
+  
