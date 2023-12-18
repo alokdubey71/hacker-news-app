@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent {
+  @Output() searchClicked: EventEmitter<string> = new EventEmitter<string>();
+  searchQuery: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
+  search() {
+    this.searchClicked.emit(this.searchQuery);
   }
-
 }

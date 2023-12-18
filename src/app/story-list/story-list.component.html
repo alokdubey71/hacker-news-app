@@ -1,5 +1,16 @@
-<div *ngFor="let story of stories">
-    <app-story-item [story]="story"></app-story-item>
+<!-- story-list.component.html -->
+
+<div class="story-list">
+  <div *ngFor="let story of stories">
+    <div>
+      <h2>{{ story.title }}</h2>
+      <p>{{ story.url }}</p>
+      <!-- Add other details as needed -->
+    </div>
   </div>
-  <app-pagination [currentPage]="currentPage" (pageChanged)="loadStories($event)"></app-pagination>
-  
+
+  <app-pagination
+    [currentPage]="currentPage"
+    (pageChanged)="pageChanged.emit($event)"
+  ></app-pagination>
+</div>

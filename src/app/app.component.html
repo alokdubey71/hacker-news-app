@@ -1,6 +1,10 @@
-<h1>Hacker News App</h1>
-<nav>
-  <a routerLink="/">Newest Stories</a>
-  <a routerLink="/search">Search</a>
-</nav>
-<router-outlet></router-outlet>
+<!-- app.component.html -->
+
+<div class="container">
+  <h1 style="color: blue;">Hacker News Stories Samples by Alok</h1>
+  <app-story-list
+    [stories]="filteredStories"
+    [currentPage]="currentPage"
+    (pageChanged)="loadStories($event)"
+  ></app-story-list>
+</div>
